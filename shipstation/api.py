@@ -12,7 +12,7 @@ class ShipStation(ShipStationBase):
     Handles the details of connecting to and querying a ShipStation account.
     """
 
-    def __init__(self, key=None, secret=None, debug=False):
+    def __init__(self, key=None, secret=None, debug=False, timeout=None):
         """
         Connecting to ShipStation required an account and a
         :return:
@@ -28,7 +28,7 @@ class ShipStation(ShipStationBase):
         self.key = key
         self.secret = secret
         self.orders = []
-        self.timeout = 1.0
+        self.timeout = timeout
         self.debug = debug
 
     def add_order(self, order):
